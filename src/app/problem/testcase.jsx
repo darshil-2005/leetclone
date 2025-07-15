@@ -2,15 +2,15 @@ import React from 'react'
 
 const Testcase = ({ testcase, index }) => {
   return (
-    <div className="mb-4 p-4 bg-slate-700 rounded-lg">
-      <div className="text-sm text-gray-400 mb-1">Test Case {index + 1}</div>
+    <div className="mb-4 p-4 shadow-md rounded-lg border">
+      <div className="text-lg mb-1">Test Case {index + 1}</div>
       <div>
-        <span className="font-semibold text-white">Input:</span>
-        <pre className="bg-slate-800 p-2 rounded text-white text-xs mt-1 overflow-x-auto">{testcase.input}</pre>
+        <span className="font-semibold">Input:</span>
+        <pre className="p-2 pl-4 rounded border text-md mt-1 overflow-x-auto">{testcase.input.map((line) => `${line}`).join('\n')}</pre>
       </div>
       <div className="mt-2">
-        <span className="font-semibold text-white">Expected Output:</span>
-        <pre className="bg-slate-800 p-2 rounded text-white text-xs mt-1 overflow-x-auto">{testcase.expectedOutput}</pre>
+        <span className="font-semibold">Expected Output:</span>
+        <pre className="p-2 rounded border text-md mt-1 overflow-x-auto">{JSON.stringify(testcase.expectedOutput)}</pre>
       </div>
     </div>
   )

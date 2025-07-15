@@ -24,3 +24,42 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Works for modern browsers (Webkit-based) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* Tailwind slate-600 */
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; /* Tailwind slate-400 */
+}
+
+
+/* :global(.monaco-editor:focus),
+:global(.monaco-editor .monaco-diff-editor .synthetic-focus),
+:global(.monaco-diff-editor [tabindex="-1"]:focus),
+:global(.monaco-diff-editor [tabindex="0"]:focus),
+:global(.monaco-diff-editor button:focus),
+:global(.monaco-diff-editor input[type="button"]:focus),
+:global(.monaco-diff-editor input[type="checkbox"]:focus),
+:global(.monaco-diff-editor input[type="search"]:focus),
+:global(.monaco-diff-editor input[type="text"]:focus),
+:global(.monaco-diff-editor select:focus),
+:global(.monaco-diff-editor textarea:focus) {
+  outline: none !important;
+  outline-color: transparent !important;
+  box-shadow: none !important;
+} */
+
