@@ -1,36 +1,17 @@
 {
-  "name": "leetclone",
-  "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "runner"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@libsql/client": "^0.15.9",
-    "@monaco-editor/react": "^4.7.0",
-    "axios": "^1.10.0",
-    "bcryptjs": "^3.0.2",
-    "better-sqlite3": "^12.2.0",
-    "bullmq": "^5.56.3",
-    "dotenv": "^17.2.0",
-    "drizzle-orm": "^0.44.2",
-    "jsonwebtoken": "^9.0.2",
-    "lodash.isequal": "^4.5.0",
-    "lucide-react": "^0.525.0",
-    "next": "15.3.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0",
-    "react-resizable-panels": "^3.0.3",
-    "uuid": "^11.1.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/better-sqlite3": "^7.6.13",
-    "drizzle-kit": "^0.31.4",
-    "tailwindcss": "^4"
+    "dev": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w frontend",
+    "lint": "npm run lint -w frontend",
+    "dev:worker": "npm run start -w runner",
+    "db:generate": "npm run db:generate -w backend",
+    "db:push": "npm run db:push -w backend"
   }
 }
