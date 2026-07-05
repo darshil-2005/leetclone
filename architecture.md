@@ -1,6 +1,6 @@
 # System Architecture
 
-LeetClone is designed as a distributed, fault-tolerant system. Code execution is decoupled from the web server using asynchronous job queues and isolated Docker sandboxes to ensure high availability and security.
+LeetClone is designed to demonstrate distributed system concepts. Code execution is decoupled from the web server using asynchronous job queues and isolated Docker sandboxes to simulate how real-world online judges handle scale.
 
 ## 📦 Monorepo Workspaces
 

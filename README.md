@@ -1,6 +1,6 @@
 # LeetClone - Full-Stack Online Judge Engine
 
-LeetClone is a highly scalable, secure, and fully functional online judge platform (similar to LeetCode). It evaluates user-submitted algorithms in **JavaScript**, **Python**, and **C++** using a secure Remote Code Execution (RCE) environment.
+LeetClone is an educational project built to understand how online judge platforms (like LeetCode) work under the hood. It demonstrates how to evaluate user-submitted algorithms in **JavaScript**, **Python**, and **C++** using a Remote Code Execution (RCE) environment.
 
 ## 🚀 Key Features
 
@@ -92,6 +92,6 @@ When you are done developing, you can cleanly stop the background services (Post
 npm run services:down
 ```
 
-## 🛡️ Security Note
+## 🛡️ Disclaimer
 
-This project is configured to run locally or on a trusted server. The execution sandbox relies on Docker limits (`--memory`, `--pids-limit`, `--network none`). If deploying to production, consider using a stronger hypervisor-based sandbox (like gVisor or Firecracker) for absolute multi-tenant security.
+**This is an educational project built for learning purposes only.** It is not intended for use in a production environment. While it implements basic Docker-level limits (`--memory`, `--pids-limit`, `--network none`) to demonstrate sandboxing concepts, real-world production systems require much stronger hypervisor-based sandboxing (like gVisor or Firecracker) for absolute multi-tenant security.
