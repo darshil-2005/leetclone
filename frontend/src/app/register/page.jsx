@@ -39,9 +39,6 @@ export default function Register() {
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_#14001f,_#0c0015,_#000000)] text-white flex flex-col justify-center items-center px-6">
       {/* Title / Logo */}
       <Link href="/" className="flex items-center space-x-3 mb-8">
-        <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
-          <span className="text-white font-bold text-lg">LC</span>
-        </div>
         <span className="text-white text-3xl font-bold tracking-widest">JudgeCode</span>
       </Link>
 

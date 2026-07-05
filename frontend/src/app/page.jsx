@@ -12,9 +12,6 @@ export default function Home() {
       <nav className="relative z-50 px-8 py-5 border-b border-white/5 backdrop-blur-md bg-black/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 bg-gradient-to-r from-orange-500 to-rose-500 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/20">
-              <span className="text-white font-bold text-base">LC</span>
-            </div>
             <span className="text-white text-2xl font-bold tracking-widest">JudgeCode</span>
           </div>
           
