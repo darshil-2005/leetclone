@@ -1,6 +1,6 @@
 # System Architecture
 
-LeetClone is designed to demonstrate distributed system concepts. Code execution is decoupled from the web server using asynchronous job queues and isolated Docker sandboxes to simulate how real-world online judges handle scale.
+JudgeCode is designed to demonstrate distributed system concepts. Code execution is decoupled from the web server using asynchronous job queues and isolated Docker sandboxes to simulate how real-world online judges handle scale.
 
 ## 📦 Monorepo Workspaces
 
@@ -27,7 +27,7 @@ When a user submits code on the frontend, the following sequence occurs:
 
 ## 🛡️ Sandbox Security & Standard I/O
 
-Executing untrusted code on a host machine is incredibly dangerous. LeetClone secures execution using **Docker-based isolation** combined with strict OS-level restrictions.
+Executing untrusted code on a host machine is incredibly dangerous. JudgeCode secures execution using **Docker-based isolation** combined with strict OS-level restrictions.
 
 ### **1. Standard I/O (No Shared Volumes or Env Vars)**
 We do not mount directories between the host and the container, nor do we pass inputs via environment variables (which are susceptible to OS size limits and injection attacks). 

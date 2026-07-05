@@ -1,6 +1,6 @@
-# LeetClone - Full-Stack Online Judge Engine
+# JudgeCode - Full-Stack Online Judge Engine
 
-LeetClone is an educational project built to understand how online judge platforms (like LeetCode) work under the hood. It demonstrates how to evaluate user-submitted algorithms in **JavaScript**, **Python**, and **C++** using a Remote Code Execution (RCE) environment.
+JudgeCode is an educational project built to understand how online judge platforms (like LeetCode) work under the hood. It demonstrates how to evaluate user-submitted algorithms in **JavaScript**, **Python**, and **C++** using a Remote Code Execution (RCE) environment.
 
 ## 🚀 Key Features
 
@@ -29,8 +29,8 @@ Follow these instructions to run the entire stack locally.
 Clone the repository and install the dependencies for all workspaces:
 
 ```bash
-git clone https://github.com/your-username/leetclone.git
-cd leetclone
+git clone https://github.com/your-username/judgecode.git
+cd judgecode
 npm install
 ```
 
