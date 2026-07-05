@@ -1,5 +1,5 @@
 {
-  "name": "@leetclone/backend",
+  "name": "@judgecode/backend",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.js",
@@ -8,16 +8,18 @@
   },
   "scripts": {
     "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "db:seed": "node src/seed.js"
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0",
     "bullmq": "^5.56.3",
     "dotenv": "^17.2.0",
-    "drizzle-orm": "^0.44.2"
+    "drizzle-orm": "^0.44.2",
+    "pg": "^8.22.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
+    "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.4"
   }
 }

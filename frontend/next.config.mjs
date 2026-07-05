@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["@leetclone/backend"],
+  transpilePackages: ["@judgecode/backend"],
 };
 
 export default nextConfig;

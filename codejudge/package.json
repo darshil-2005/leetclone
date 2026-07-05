@@ -1,0 +1,15 @@
+{
+  "name": "@judgecode/runner",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node worker.js",
+    "docker:build": "docker build -t judgecode-runner .",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bullmq": "^5.56.3",
+    "dotenv": "^17.2.0"
+  }
+}

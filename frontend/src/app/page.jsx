@@ -1,35 +1,37 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_#14001f,_#0c0015,_#000000)] text-white flex flex-col">
       {/* Navigation */}
-      <nav className="relative z-50 px-6 py-4">
+      <nav className="relative z-50 px-8 py-5 border-b border-white/5 backdrop-blur-md bg-black/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">LC</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-9 h-9 bg-gradient-to-r from-orange-500 to-rose-500 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/20">
+              <span className="text-white font-bold text-base">LC</span>
             </div>
-            <span className="text-white text-xl font-bold">LeetClone</span>
+            <span className="text-white text-2xl font-bold tracking-widest">JudgeCode</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-            <a href="#problems" className="text-gray-300 hover:text-white transition-colors">Problems</a>
-            <Link href="/api/register" className="text-gray-300 hover:text-white transition-colors">Register</Link>
-            <Link href="/login" className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200">
+            <a href="#features" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Features</a>
+            <Link href="/problems" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Problems</Link>
+            <Link href="/create-problem" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Create Challenge</Link>
+            <Link href="/profile" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Profile</Link>
+            <Link href="/register" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Register</Link>
+            <Link href="/login" className="bg-gradient-to-r from-orange-500 to-rose-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:from-orange-600 hover:to-rose-700 transition-all duration-200 shadow-md shadow-orange-500/10">
               Login
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-white"
+            className="md:hidden text-white hover:opacity-80 transition-opacity"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,12 +42,14 @@ export default function Home() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-800 border-t border-slate-700">
-            <div className="px-6 py-4 space-y-4">
-              <a href="#features" className="block text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#problems" className="block text-gray-300 hover:text-white transition-colors">Problems</a>
-              <Link href="/api/register" className="block text-gray-300 hover:text-white transition-colors">Register</Link>
-              <Link href="/login" className="block bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-lg text-center">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950/95 border-b border-white/5 backdrop-blur-lg">
+            <div className="px-8 py-6 space-y-4">
+              <a href="#features" className="block text-gray-300 hover:text-white transition-colors text-sm">Features</a>
+              <Link href="/problems" className="block text-gray-300 hover:text-white transition-colors text-sm">Problems</Link>
+              <Link href="/create-problem" className="block text-gray-300 hover:text-white transition-colors text-sm">Create Challenge</Link>
+              <Link href="/profile" className="block text-gray-300 hover:text-white transition-colors text-sm">Profile</Link>
+              <Link href="/register" className="block text-gray-300 hover:text-white transition-colors text-sm">Register</Link>
+              <Link href="/login" className="block bg-gradient-to-r from-orange-500 to-rose-600 text-white px-6 py-2.5 rounded-lg text-center text-sm font-semibold shadow-md">
                 Login
               </Link>
             </div>
@@ -54,135 +58,95 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative px-6 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+      <section className="relative px-8 py-24 md:py-36 flex-1 flex flex-col justify-center items-center text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto z-10">
+          <div className="mb-10">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-tight">
               Master Coding
-              <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                One Problem at a Time
+              <span className="block bg-gradient-to-r from-orange-400 via-rose-500 to-indigo-500 bg-clip-text text-transparent pb-2">
+                One Challenge at a Time
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Sharpen your programming skills with our curated collection of coding challenges. 
-              From easy to hard, we've got problems for every level.
+            <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+              Sharpen your programming skills with our isolated sandbox runner. 
+              Support for JavaScript, Python, and C++ with real-time test verification.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/problems" className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105">
+            <Link href="/problems" className="bg-gradient-to-r from-orange-500 to-rose-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-orange-600 hover:to-rose-700 transition-all duration-200 transform hover:scale-105 shadow-xl shadow-orange-500/25">
               Start Solving
             </Link>
-            <Link href="/api/register" className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-200">
-              Join Now
+            <Link href="/register" className="border border-white/20 hover:border-white/40 bg-white/5 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition-all duration-200 backdrop-blur-sm">
+              Create Free Account
             </Link>
           </div>
         </div>
 
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-red-500/20 rounded-full blur-xl"></div>
+        {/* Ambient glow backgrounds */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-rose-600/15 rounded-full blur-[120px] pointer-events-none"></div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="px-6 py-20 bg-slate-800/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-            Why Choose LeetClone?
-          </h2>
+      <section id="features" className="px-8 py-24 border-t border-white/5 bg-black/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-wide">
+              Built for Developers
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Everything you need to practice, solve challenges, and check execution performance.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-orange-500 transition-all duration-200">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-6">
+            {/* Feature 1 */}
+            <div className="bg-white/[0.02] backdrop-blur-xl p-8 rounded-2xl border border-white/5 hover:border-orange-500/20 hover:bg-white/[0.04] transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-rose-500 rounded-xl flex items-center justify-center mb-6 shadow-md shadow-orange-500/20">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Curated Problems</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Hand-picked coding challenges covering algorithms, data structures, and system design concepts.
+              <h3 className="text-xl font-bold text-white mb-3">Multi-Language Sandbox</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                Run JavaScript, Python, or high-performance C++ code inside secure, resource-limited Docker containers.
               </p>
             </div>
 
-            <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-orange-500 transition-all duration-200">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-6">
+            {/* Feature 2 */}
+            <div className="bg-white/[0.02] backdrop-blur-xl p-8 rounded-2xl border border-white/5 hover:border-rose-500/20 hover:bg-white/[0.04] transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 shadow-md shadow-rose-500/20">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Instant Feedback</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Get immediate results with our real-time code execution and comprehensive test cases.
+              <h3 className="text-xl font-bold text-white mb-3">Instant Output Execution</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                Pipe standard input and output instantly. Get quick test execution results, stdout, and error traces.
               </p>
             </div>
 
-            <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-orange-500 transition-all duration-200">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-6">
+            {/* Feature 3 */}
+            <div className="bg-white/[0.02] backdrop-blur-xl p-8 rounded-2xl border border-white/5 hover:border-indigo-500/20 hover:bg-white/[0.04] transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 shadow-md shadow-indigo-500/20">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Track Progress</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Monitor your learning journey with detailed analytics and submission history.
+              <h3 className="text-xl font-bold text-white mb-3">Attempt Tracking & History</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                Monitor details of every code execution. Store code history and review previous solutions on your profile.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-gray-300">Coding Problems</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">10K+</div>
-              <div className="text-gray-300">Active Users</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50K+</div>
-              <div className="text-gray-300">Submissions</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">95%</div>
-              <div className="text-gray-300">Success Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="px-6 py-20 bg-slate-800/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Level Up Your Coding Skills?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of developers who are already improving their problem-solving abilities.
-          </p>
-          <Link href="/api/register" className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105 inline-block">
-            Get Started Today
-          </Link>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="px-6 py-12 border-t border-slate-700">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">LC</span>
-            </div>
-            <span className="text-white text-xl font-bold">LeetClone</span>
-          </div>
-          <p className="text-gray-400">
-            © 2024 LeetClone. Built for learning and practice.
-          </p>
-        </div>
+      <footer className="py-10 border-t border-white/5 bg-black/30 text-center text-gray-500 text-sm">
+        <p className="mb-2">&copy; 2026 JudgeCode. Built with Next.js, Docker, Drizzle and PostgreSQL.</p>
+        <p className="text-xs text-gray-600 font-mono">Status: All compilation runners online.</p>
       </footer>
     </div>
   );

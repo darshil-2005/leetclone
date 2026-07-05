@@ -1,9 +1,15 @@
 const path = require("path");
-const { drizzle } = require("drizzle-orm/better-sqlite3");
-const Database = require("better-sqlite3");
+// Load environment variables from .env.local if not already defined (useful for scripts)
+require("dotenv").config({ path: path.join(__dirname, "../../.env.local") });
+
+const { drizzle } = require("drizzle-orm/node-postgres");
+const { Pool } = require("pg");
 const { users, problems, submissions } = require("./schema.js");
 
-const sqlite = new Database(path.join(__dirname, "../sqlite.db"));
-const db = drizzle(sqlite);
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+const db = drizzle(pool);
 
 module.exports = { db, users, problems, submissions };

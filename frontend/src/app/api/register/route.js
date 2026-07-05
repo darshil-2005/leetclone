@@ -1,4 +1,4 @@
-const { db, users } = require("@leetclone/backend");
+const { db, users } = require("@judgecode/backend");
 const bcrypt = require('bcryptjs');
 const {eq} = require('drizzle-orm');
 

@@ -1,45 +1,39 @@
-const { integer, text, json } = require("drizzle-orm/gel-core");
-const { sqliteTable } = require("drizzle-orm/sqlite-core");
+const { pgTable, serial, integer, text, jsonb } = require("drizzle-orm/pg-core");
 const { relations } = require("drizzle-orm");
 
-const difficulty = ["Easy", "Medium", "Hard", "Don't Bother"];
-// const status = ["Accepted", "Rejected"];
-
-const users = sqliteTable("users", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+const users = pgTable("users", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
   password: text("password").notNull(),
 });
 
-const problems = sqliteTable("problems", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+const problems = pgTable("problems", {
+  id: serial("id").primaryKey(),
   title: text("title").notNull(),
   authorId: integer('author_id').notNull(),
   description: text("description").notNull(),
   defaultCode: text("default_code").notNull(),
-  examples: json("examples").notNull(),
-  run_testcases: json("run_testcases").notNull(),
+  examples: jsonb("examples").notNull(),
+  run_testcases: jsonb("run_testcases").notNull(),
   constraints: text("constraints").notNull(),
-  difficulty: text("difficulty", { enums: difficulty }).notNull(),
-  param_types: text('param_types').notNull(),
-  return_type: text('return_type'),
-  function_name: text("function_name").notNull(),
+  difficulty: text("difficulty").notNull(),
   timelimit: integer("timelimit").notNull(),      // in ms
   memorylimit: integer("memorylimit").notNull(),  // in MB
 });
 
-const submissions = sqliteTable("submissions", {
+const submissions = pgTable("submissions", {
   submissionId: text("submissionId").primaryKey(),
   userId: integer("userId"),
   problemId: integer("problemId"),
+  language: text("language").notNull(),
   code: text("code").notNull(),
   status: text("status").notNull(),
   result: text("result").notNull(),
 });
 
-const submit_testcases = sqliteTable("submit_testcases", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+const submit_testcases = pgTable("submit_testcases", {
+  id: serial("id").primaryKey(),
   problemId: integer("problem_id").notNull(),
   input: text("input").notNull(),
   expectedOutput: text("expected_output").notNull(),

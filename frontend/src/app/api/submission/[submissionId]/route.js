@@ -1,4 +1,4 @@
-import { db, submissions } from "@leetclone/backend";
+import { db, submissions } from "@judgecode/backend";
 import { eq } from "drizzle-orm";
 
 export async function GET(req, {params}) {

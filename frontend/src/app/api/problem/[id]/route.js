@@ -1,4 +1,4 @@
-const { db, problems } = require("@leetclone/backend");
+const { db, problems } = require("@judgecode/backend");
 const {eq} = require('drizzle-orm');
 
 
@@ -22,5 +22,5 @@ export async function GET(req, {params}) {
         return Response.json({error: 'Problem does not exist!!'}, {status: 404});
     }
 
-    return Response.json({messege: 'Success!!', problem: problem}, {status:200})
+    return Response.json({message: 'Success!!', problem: problem}, {status:200})
 }

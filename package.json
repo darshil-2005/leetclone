@@ -3,15 +3,22 @@
   "workspaces": [
     "frontend",
     "backend",
-    "runner"
+    "codejudge"
   ],
   "scripts": {
     "dev": "npm run dev -w frontend",
     "build": "npm run build -w frontend",
     "start": "npm run start -w frontend",
     "lint": "npm run lint -w frontend",
-    "dev:worker": "npm run start -w runner",
+    "dev:worker": "npm run start -w codejudge",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:worker\"",
     "db:generate": "npm run db:generate -w backend",
-    "db:push": "npm run db:push -w backend"
+    "db:push": "npm run db:push -w backend",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }

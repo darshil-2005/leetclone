@@ -1,4 +1,4 @@
-const { db, users } = require("@leetclone/backend");
+const { db, users } = require("@judgecode/backend");
 const { eq } = require("drizzle-orm");
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
@@ -23,7 +23,7 @@ export async function POST(req) {
     const result = await db
     .select()
     .from(users)
-    .where(eq(email, users.email));
+    .where(eq(users.email, email));
 
     const user=result[0];
 
